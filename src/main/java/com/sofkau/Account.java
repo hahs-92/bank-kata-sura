@@ -28,12 +28,26 @@ public class Account {
             LOGGER.warning("Lo sentimos, no puedes retirar esta cantidad");
             return;
         }
+
         balance = balance.decrease(amount.getValue());
         statement.createTransaction(date, new Amount(0), amount, this.balance);
     }
 
+    void transfer(Account account, Amount amount, Date date) {
+        if(amount.getValue() > balance.getValue()) {
+            LOGGER.warning("Lo sentimos, no tienes suficientes fondos");
+            return;
+        }
+
+        this.withdraw(amount, date);
+        account.deposit(amount, date);
+    }
+
     void printStatements() {
         statement.getTransactions().transactions
-                .forEach(t ->  LOGGER.info(t.toString()));
+                .forEach(t ->
+                        LOGGER.info("AccountId: " + this.accountId.getId() + " [" +  t.toString() + " ]")
+                );
     }
+
 }
