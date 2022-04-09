@@ -10,15 +10,12 @@ public class Balance {
         this.balance = balance;
     }
 
-    public void increaseBalance(double credit) {
-        this.balance = balance + credit;
+    public Balance increaseBalance(double credit) {
+        return new Balance(this.balance + credit);
     }
 
-    public void deductBalance(double debit) {
-        this.balance = balance - debit;
+    public Balance deductBalance(double debit) {
+        return new Balance(this.balance - debit);
     }
 
-    public double getBalance() {
-        return this.balance;
-    }
 }
