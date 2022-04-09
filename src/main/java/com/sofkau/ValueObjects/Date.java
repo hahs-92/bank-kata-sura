@@ -1,13 +1,13 @@
-package com.sofkau.ValueOjects;
+package com.sofkau.ValueObjects;
 
 import java.time.LocalDate;
 
 
 public class Date {
-    private LocalDate date;
+    private final LocalDate dateValue;
 
     public Date(LocalDate date) {
-        this.date = date;
+        this.dateValue = date;
     }
 
     public static Date date(String date) {
@@ -19,7 +19,7 @@ public class Date {
     @Override
     public String toString() {
         return "Date{" +
-                "date=" + date +
+                "date=" + dateValue +
                 '}';
     }
 }

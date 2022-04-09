@@ -1,7 +1,7 @@
 package com.sofkau;
 
-import com.sofkau.ValueOjects.Amount;
-import com.sofkau.ValueOjects.Date;
+import com.sofkau.ValueObjects.Amount;
+import com.sofkau.ValueObjects.Date;
 
 
 public class Transaction {

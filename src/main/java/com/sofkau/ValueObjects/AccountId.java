@@ -1,4 +1,4 @@
-package com.sofkau.ValueOjects;
+package com.sofkau.ValueObjects;
 
 import java.util.UUID;
 
