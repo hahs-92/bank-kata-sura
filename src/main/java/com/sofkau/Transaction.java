@@ -1,28 +1,30 @@
 package com.sofkau;
 
-import java.time.LocalDate;
+import com.sofkau.ValueOjects.Amount;
+import com.sofkau.ValueOjects.Date;
+
 
 public class Transaction {
 
-    private LocalDate date;
-    private Double balance;
-    private Double credit;
-    private Double debit;
+    private Date date;
+    private Amount credit;
+    private Amount debit;
+    private Amount balance;
 
-    public Transaction(LocalDate date, Double balance, Double credit, Double debit) {
+    public Transaction(Date date, Amount credit, Amount debit, Amount balance) {
         this.date = date;
-        this.balance = balance;
         this.credit = credit;
         this.debit = debit;
+        this.balance = balance;
     }
 
     @Override
     public String toString() {
         return "Transaction{" +
                 "date=" + date +
-                ", balance=" + balance +
                 ", credit=" + credit +
                 ", debit=" + debit +
+                ", balance=" + balance +
                 '}';
     }
 }

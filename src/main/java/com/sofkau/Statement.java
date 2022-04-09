@@ -1,13 +1,19 @@
 package com.sofkau;
 
 
-import java.time.LocalDate;
+import com.sofkau.ValueOjects.Amount;
+import com.sofkau.ValueOjects.Date;
+
 
 public class Statement {
     ListTransactions transactions;
 
-    public void createTransaction(Double amount, LocalDate date, Double credit, Double debit) {
-        Transaction transaction = new Transaction(date, amount, credit, debit);
+    public Statement() {
+        this.transactions = new ListTransactions();
+    }
+
+    public void createTransaction(Date date, Amount credit, Amount debit, Amount balance) {
+        Transaction transaction = new Transaction(date, credit, debit, balance);
         transactions.addTransaction(transaction);
     }
 
